@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿## UnityTextI18n
+
+Simply localize text based on the `Resources/i18n/` folder in your Unity project.
+
+One of the ideas is to have a `.dll` for each version after version `2019.4.8f1` (LTS only).
+
+I include a default `I18NText.cs` script that can be used within Unity to use this, probably will be removed later.
+
+```c#
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UnityTextI18n
@@ -23,3 +32,4 @@ namespace UnityTextI18n
         }
     }
 }
+```

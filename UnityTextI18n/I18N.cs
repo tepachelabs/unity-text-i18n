@@ -21,12 +21,12 @@ namespace UnityTextI18n
             }
 
             var languageCode = GetLanguageCode();
-            var languageTextAsset = Resources.Load(@"I18n/" + languageCode);
+            var languageTextAsset = Resources.Load(@"i18n/" + languageCode);
             if (languageTextAsset == null)
             {
-                Debug.LogError("File not found for I18n: Assets/Resources/I18n/" + languageCode +
+                Debug.LogError("File not found for I18n: Assets/Resources/i18n/" + languageCode +
                                ".txt, using english as default");
-                languageTextAsset = Resources.Load(@"I18n/en"); // fallback to english
+                languageTextAsset = Resources.Load(@"i18n/en"); // fallback to english
             }
 
             var textFileLines = ((TextAsset) languageTextAsset).text;
