@@ -16,9 +16,12 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '4.6.1'
+        dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      uses: nuget/setup-nuget@v1
+    - run: |
+        dotnet restore
+        nuget restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
