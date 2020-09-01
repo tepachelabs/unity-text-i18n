@@ -13,8 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build project # This would actually build your project, using zip for an example artifact
-        run: |
+      - name: Build project
+        uses: nuget/setup-nuget@v1
+      - run: |
+          dotnet restore
+          nuget restore
           dotnet build --configuration Release --no-restore
       - name: Create Release
         id: create_release
