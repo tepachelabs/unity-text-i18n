@@ -20,8 +20,8 @@ jobs:
     - name: Install dependencies
       uses: nuget/setup-nuget@v1
     - run: |
-        dotnet restore /src
+        dotnet restore ./src
     - name: Build
-      run: dotnet build /src --configuration Release --no-restore
+      run: dotnet build ./src --configuration Release --no-restore
     - name: Test
-      run: dotnet test /src --no-restore --verbosity normal
+      run: dotnet test ./src --no-restore --verbosity normal
