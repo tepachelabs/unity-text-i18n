@@ -39,6 +39,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/Release/UnityTextI18n.dll
+          asset_path: ./src/UnityTextI18n/bin/Release/net48/UnityTextI18n.dll
           asset_name: UnityTextI18n.dll
           asset_content_type: application/octet-stream
