@@ -6,6 +6,8 @@ namespace UnityTextI18n
 {
     public class I18N
     {
+        // ReSharper disable once MemberCanBePrivate.Global
+        // ReSharper disable once CollectionNeverQueried.Global
         public static Dictionary<string, string> Language { get; private set; }
 
         static I18N()
@@ -15,10 +17,7 @@ namespace UnityTextI18n
 
         private static void LoadLanguage()
         {
-            if (Language == null)
-            {
-                Language = new Dictionary<string, string>();
-            }
+            Language ??= new Dictionary<string, string>();
 
             var languageCode = GetLanguageCode();
             var languageTextAsset = Resources.Load(@"i18n/" + languageCode);
@@ -42,6 +41,7 @@ namespace UnityTextI18n
             }
         }
 
+        // ReSharper disable once MemberCanBePrivate.Global
         public static string GetLanguageCode()
         {
             return TwoLetterIsoCodeFromSystemLanguage().ToLower();
@@ -82,6 +82,7 @@ namespace UnityTextI18n
                 case SystemLanguage.Dutch:
                     break;
                 case SystemLanguage.English:
+                    res = "EN";
                     break;
                 case SystemLanguage.Estonian:
                     break;
