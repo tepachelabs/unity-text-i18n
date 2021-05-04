@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace UnityTextI18n
 {
-    public class I18N
+    public static class I18N
     {
-        // ReSharper disable once MemberCanBePrivate.Global
-        // ReSharper disable once CollectionNeverQueried.Global
         public static Dictionary<string, string> Language { get; private set; }
 
         static I18N()
@@ -41,7 +39,6 @@ namespace UnityTextI18n
             }
         }
 
-        // ReSharper disable once MemberCanBePrivate.Global
         public static string GetLanguageCode()
         {
             return TwoLetterIsoCodeFromSystemLanguage().ToLower();

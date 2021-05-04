@@ -17,26 +17,12 @@ Simply localize text based on the `Resources/i18n/` folder in your Unity project
 sample.text = This is a sample text that will appear in the text area. 
 ```
 
-3. Create a `I18NText.cs` script that can be used within Unity to use this, probably will be removed later.
+3. Add a `Text` component and add the component `I18NText` from the `UI` context menu.
 
-```c#
-using UnityEngine;
-using UnityEngine.UI;
-using UnityTextI18n;
-
-public class I18NText : MonoBehaviour
-{
-    [SerializeField] private string textId = default;
-
-    private void Start()
-    {
-        var text = GetComponent<Text>();
-        if (text == null) return;
-
-        text.text = textId == "ISOCode" ? I18N.GetLanguageCode() : I18N.Language[textId];
-    }
-}
-```
+![i18ntext component][component_image]
 
 ### Future of this package:
-One of the ideas is to have a `.dll` for each version after version `2019.4.8f1` (LTS only).
+- One of the ideas is to have a `.dll` for each version after version `2019.4.8f1` (LTS only).
+- Add an editor in unity for all the values
+
+[component_image]: https://i.imgur.com/qieCZ4b.png

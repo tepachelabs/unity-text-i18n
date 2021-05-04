@@ -7,6 +7,7 @@
 
     <ItemGroup>
       <PackageReference Include="Unity3D.SDK" Version="2019.4.9.1" />
+      <PackageReference Include="Unity3D.UnityEngine.UI" Version="2018.3.5.1" />
     </ItemGroup>
 
 </Project>
